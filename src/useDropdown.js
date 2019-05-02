@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
-const useDroptdown = (label, defaultState, options) => {
+const useDropdown = (label, defaultState, options) => {
   const [state, setState] = useState(defaultState);
-  const id = `use-dropdown-${label.replace(" ", "").toLoweCase()}`;
+  const id = `use-dropdown-${label.replace(" ", "").toLowerCase()}`;
   const Dropdown = () => (
     <label htmlFor={id}>
       {label}
       <select
-        name=""
         id={id}
         value={state}
         onChange={e => setState(e.target.value)}
@@ -25,4 +24,4 @@ const useDroptdown = (label, defaultState, options) => {
   );
   return [state, Dropdown, setState];
 };
-export default useDroptdown;
+export default useDropdown;
